@@ -1,0 +1,54 @@
+html{
+    background-color: black;
+}
+
+
+*{
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+.game{
+    width: 500px;
+    height: 200px;
+
+    margin: auto;
+}
+#box{
+    border-color: white;
+    border-width: 100px;
+}
+#score{
+    color:white;
+    text-align:center;
+}
+#character{
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    position:absolute;
+    top: 150px;
+}
+.animate{
+    animation: jump 0.3s linear;
+}
+@keyframes jump{
+    0%{top: 150px;transform:rotate(0deg)}
+    30%{top: 75px;}
+    70%{top: 75px;}
+    100%{top: 150px;transform:rotate(180deg)}
+}
+
+#enemy{
+    background-color: red;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top: 160px;
+    left: 500px;
+    animation: enemy 1s infinite linear;
+}
+@keyframes enemy{
+    0%{left: 500px}
+    100%{left: -20px}
+}
