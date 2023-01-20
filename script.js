@@ -19,7 +19,7 @@ document.addEventListener("keydown", function(e){
 })
 const points = () =>{
     counter++; 
-    score.innerHTML = counter;
+    score.innerHTML = Math.floor(counter/200);
 }
 
 function detectCollision(a, b) {
@@ -46,6 +46,6 @@ const play = () =>{
             counter = 0;
         }else{
         points();}
-    },300)
+    },1)
 }
 
