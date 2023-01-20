@@ -22,13 +22,30 @@ const points = () =>{
     score.innerHTML = counter;
 }
 
+function detectCollision(a, b) {
+    var aRect = a.getBoundingClientRect();
+    var bRect = b.getBoundingClientRect();
+    return !(
+        ((aRect.top + aRect.height) < (bRect.top)) ||
+        (aRect.top > (bRect.top + bRect.height)) ||
+        ((aRect.left + aRect.width) < bRect.left) ||
+        (aRect.left > (bRect.left + bRect.width))
+    );
+}
+
 
 
 const play = () =>{
     button.setAttribute("disabled","disabled" )
-    setInterval(function(){
-        points();
+    enemy.style.animation = "enemy 1s infinite linear"
+    var thing = setInterval(function(){
+        if(detectCollision(enemy, character)){
+            clearInterval(thing);
+            enemy.style.animation = "none";
+            button.disabled = false;
+            counter = 0;
+        }else{
+        points();}
     },300)
 }
 
-  
