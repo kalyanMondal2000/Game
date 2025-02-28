@@ -44,7 +44,7 @@ border-color: white;
     height: 50px;
     background-color: white;
     position:absolute;
-    top: 200px;
+    top: 150px;
 }
 .animate{
     animation: jump 0.3s linear;
